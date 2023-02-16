@@ -16,7 +16,11 @@ def main():
     resp = service.cse().list(q=query, cx=engine_id).execute()
     items = resp['items']
     for item in items:
+        print(item)
+        break
+        print(item.get('title'))
         print(item.get('link'))
+        print(item.get('description'))
 
 
 if __name__ == '__main__':
