@@ -1,5 +1,5 @@
 import sys
-import requests
+import pprint
 from googleapiclient.discovery import build
 
 
@@ -14,13 +14,12 @@ def main():
 
     service = build("customsearch", "v1", developerKey=api_key)
     resp = service.cse().list(q=query, cx=engine_id).execute()
+    pprint.pprint(resp)
     items = resp['items']
     for item in items:
-        print(item)
-        break
-        print(item.get('title'))
-        print(item.get('link'))
-        print(item.get('description'))
+        print("Title: ", item.get('title'))
+        print("Link: ", item.get('link'))
+        print("Description: ", item.get('snippet'))
 
 
 if __name__ == '__main__':
