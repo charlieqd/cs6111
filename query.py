@@ -14,7 +14,7 @@ def main():
 
     service = build("customsearch", "v1", developerKey=api_key)
     resp = service.cse().list(q=query, cx=engine_id).execute()
-    pprint.pprint(resp)
+    # pprint.pprint(resp)
     items = resp['items']
     for item in items:
         print("Title: ", item.get('title'))
