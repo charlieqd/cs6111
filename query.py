@@ -34,8 +34,8 @@ def augment(query, items):
     queries = query.split(' ')
     R = []
     IR = []
-    beta = 0.85
-    gamma = 0.15
+    beta = 0.85     # beta for relevant docs
+    gamma = 0.15    # gamma for irrelevant docs
     p1 = random.random()
     p2 = random.random()
 
@@ -77,7 +77,7 @@ def augment(query, items):
                 continue
 
             # modified rocchio's algorithm
-            if term in IR_terms and p2 < beta:
+            if term in IR_terms and p2 < gamma:
                 continue
 
             print(term, ":", freq)
