@@ -3,7 +3,9 @@ import pprint
 import random
 from googleapiclient.discovery import build
 from sklearn.feature_extraction.text import CountVectorizer
+from collections import defaultdict
 
+# ToDo: use another stop words dict
 stop_words = ('the', 'a', 'an', 'in', 'of',
               'to', 'and', 'as', 'at', 'be',
               'for', 'from', 'is', 'it', 'on',
@@ -34,7 +36,6 @@ def levenshtein(s1, s2):
 
 
 def augment(query, items):
-    queries = query.split(' ')
     R = []
     IR = []
     beta = 0.85  # beta for relevant docs
@@ -48,50 +49,85 @@ def augment(query, items):
         else:
             IR.append(doc['title'] + ' ' + doc['snippet'])
 
-    vectorizer = CountVectorizer()
-    R_vectors = vectorizer.fit_transform(R).toarray()
-    R_terms = vectorizer.get_feature_names()
-    R_freq = {}
+    vectorizer = CountVectorizer(stop_words='english')
+    vectorizer.fit(R)
+    r_term_dict = vectorizer.vocabulary_
+    print("r_term_dict is ")
+    print(r_term_dict)
+    vectorizer.fit(IR)
+    ir_term_dict = vectorizer.vocabulary_
+    print("ir_term_dict is ")
+    print(ir_term_dict)
+    term_to_value = defaultdict(int)
 
-    IR_vectors = vectorizer.fit_transform(IR).toarray()
-    IR_terms = vectorizer.get_feature_names()
+    # Rocchio's Algorithm + query words ordering
+    for term, freq in r_term_dict.items():
+        term_to_value[term] += freq * beta
+    for term, freq in ir_term_dict.items():
+        term_to_value[term] -= freq * gamma
+    sortedTerm = sorted(term_to_value.items(), key=lambda x: x[1], reverse=True)
 
-    for i, vector in enumerate(R_vectors):
-        # get vector for each relevant search result
-        print("Relevant document vector", i)
-        for j, freq in enumerate(vector):
-            term = R_terms[j]
-            skip = False
+    queries = query.split(' ')
+    for i in range(len(sortedTerm)):
+        if sortedTerm[i][0] not in queries:
+            queries.append(sortedTerm[i][0])
+            break
+    term_to_new_value = defaultdict(int)
+    for word in queries:
+        term_to_new_value[word] = term_to_value[word]
 
-            # check stop words
-            if term in stop_words:
-                continue
+    sortedTermNew = dict(sorted(term_to_new_value.items(), key=lambda x: x[1], reverse=True))
 
-            # check edit distance
-            for q in queries:
-                if levenshtein(term, q) <= 1:
-                    skip = True
-                    break
-            if skip:
-                continue
+    requery = ' '.join(list(sortedTermNew.keys()))
+    print("requery is ", requery)
 
-            # check frequencies
-            if freq == 0:
-                continue
 
-            # modified rocchio's algorithm
-            if term in IR_terms and p2 < gamma:
-                continue
-
-            print(term, ":", freq)
-            if term in R_freq:
-                R_freq[term] += freq
-            else:
-                R_freq[term] = 1
-
-    print(R_freq)
+    # R_vectors = vectorizer.fit_transform(R).toarray()
+    # print("R_vectors aree: ")
+    # print(R_vectors)
+    # R_terms = vectorizer.get_feature_names()
+    # print(R_terms)
+    # R_freq = {}
+    #
+    # IR_vectors = vectorizer.fit_transform(IR).toarray()
+    # IR_terms = vectorizer.get_feature_names()
+    #
+    # for i, vector in enumerate(R_vectors):
+    #     # get vector for each relevant search result
+    #     print("Relevant document vector", i)
+    #     for j, freq in enumerate(vector):
+    #         term = R_terms[j]
+    #         skip = False
+    #
+    #         # check stop words
+    #         if term in stop_words:
+    #             continue
+    #
+    #         # check edit distance
+    #         for q in queries:
+    #             if levenshtein(term, q) <= 1:
+    #                 skip = True
+    #                 break
+    #         if skip:
+    #             continue
+    #
+    #         # check frequencies
+    #         if freq == 0:
+    #             continue
+    #
+    #         # modified rocchio's algorithm
+    #         if term in IR_terms and p2 < gamma:
+    #             continue
+    #
+    #         print(term, ":", freq)
+    #         if term in R_freq:
+    #             R_freq[term] += freq
+    #         else:
+    #             R_freq[term] = 1
+    #
+    # print(R_freq)
     # TODO construct new query
-    return query
+    return requery
 
 
 def main():
@@ -107,7 +143,6 @@ def main():
     rel = -1
     while rel < float(precision) and rel != 0:
         count = 0
-        rel = 0
         length = 10
 
         print("Parameters: ", api_key, engine_id, precision)
