@@ -40,8 +40,6 @@ def augment(query, items):
     IR = []
     beta = 0.85  # beta for relevant docs
     gamma = 0.15  # gamma for irrelevant docs
-    p1 = random.random()
-    p2 = random.random()
 
     for doc in items:
         if doc["relevant"]:
@@ -49,23 +47,33 @@ def augment(query, items):
         else:
             IR.append(doc['title'] + ' ' + doc['snippet'])
 
-    vectorizer = CountVectorizer(stop_words='english')
+    print("R is ")
+    for r in R:
+        print(r)
+    vectorizer = CountVectorizer()
     vectorizer.fit(R)
     r_term_dict = vectorizer.vocabulary_
     print("r_term_dict is ")
     print(r_term_dict)
+    r_term_count, ir_term_count = 0, 0
+    for t, v in r_term_dict.items():
+        r_term_count += v
     vectorizer.fit(IR)
     ir_term_dict = vectorizer.vocabulary_
     print("ir_term_dict is ")
     print(ir_term_dict)
+    for t, v in ir_term_dict.items():
+        ir_term_count += v
     term_to_value = defaultdict(int)
 
     # Rocchio's Algorithm + query words ordering
     for term, freq in r_term_dict.items():
-        term_to_value[term] += freq * beta
+        term_to_value[term] += freq * beta/r_term_count
     for term, freq in ir_term_dict.items():
-        term_to_value[term] -= freq * gamma
+        term_to_value[term] -= freq * gamma/ir_term_count
     sortedTerm = sorted(term_to_value.items(), key=lambda x: x[1], reverse=True)
+    print("Sorted Term is ")
+    print(sortedTerm)
 
     queries = query.split(' ')
     for i in range(len(sortedTerm)):
@@ -137,13 +145,11 @@ def main():
     query = sys.argv[4]
 
     service = build("customsearch", "v1", developerKey=api_key)
-    resp = service.cse().list(q=query, cx=engine_id).execute()
-    # pprint.pprint(resp)
-    items = resp['items']
     rel = -1
     while rel < float(precision) and rel != 0:
-        count = 0
-        length = 10
+        resp = service.cse().list(q=query, cx=engine_id).execute()
+        items = resp['items']
+        count, length = 0, 10
 
         print("Parameters: ", api_key, engine_id, precision)
         print("API key      = " + api_key)
@@ -152,7 +158,7 @@ def main():
         print("Query        = " + query)
         print("Google Search Results:")
         print("========================")
-
+        result = []
         for i, item in enumerate(items):
             if 'mime' in item and item['mime'] != 'text/html':
                 print("Result " + str(i + 1) + " is not html snippet, skip")
@@ -166,6 +172,7 @@ def main():
             feedback = input("Relevant? (Y/N)")
             if feedback == "Y" or feedback == "y":
                 item["relevant"] = True
+                result.append(item)
                 count += 1
             else:
                 item["relevant"] = False
@@ -181,6 +188,7 @@ def main():
         if rel == 0:
             print("Precision: 0")
             print("Stopped")
+            break
         elif rel < float(precision):
             print("Precision: " + str(rel) + " < " + str(precision))
             query = augment(query, items)
@@ -188,6 +196,15 @@ def main():
         else:
             print("Precision: " + str(rel))
             print("Desired precision reached, done")
+            break
+    print("========================")
+    if rel >= float(precision):
+        print("Final Results are ")
+        for i in length(result):
+            print("Result " + str(i + 1))
+            print("Title: ", item.get('title'))
+            print("Link: ", item.get('link'))
+            print("Description: ", item.get('snippet'))
 
 
 if __name__ == '__main__':
