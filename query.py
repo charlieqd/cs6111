@@ -9,6 +9,7 @@ stop_words = ('the', 'a', 'an', 'in', 'of',
               'for', 'from', 'is', 'it', 'on',
               'was', 'were', 'with')
 
+
 # levenshtein edit distance in wikipedia
 def levenshtein(s1, s2):
     if len(s1) < len(s2):
@@ -22,20 +23,22 @@ def levenshtein(s1, s2):
     for i, c1 in enumerate(s1):
         current_row = [i + 1]
         for j, c2 in enumerate(s2):
-            insertions = previous_row[j + 1] + 1 # j+1 instead of j since previous_row and current_row are one character longer
-            deletions = current_row[j] + 1       # than s2
+            insertions = previous_row[
+                             j + 1] + 1  # j+1 instead of j since previous_row and current_row are one character longer
+            deletions = current_row[j] + 1  # than s2
             substitutions = previous_row[j] + (c1 != c2)
             current_row.append(min(insertions, deletions, substitutions))
         previous_row = current_row
-    
+
     return previous_row[-1]
+
 
 def augment(query, items):
     queries = query.split(' ')
     R = []
     IR = []
-    beta = 0.85     # beta for relevant docs
-    gamma = 0.15    # gamma for irrelevant docs
+    beta = 0.85  # beta for relevant docs
+    gamma = 0.15  # gamma for irrelevant docs
     p1 = random.random()
     p2 = random.random()
 
@@ -71,7 +74,7 @@ def augment(query, items):
                     break
             if skip:
                 continue
-            
+
             # check frequencies
             if freq == 0:
                 continue
@@ -87,8 +90,9 @@ def augment(query, items):
                 R_freq[term] = 1
 
     print(R_freq)
-    #TODO construct new query
+    # TODO construct new query
     return query
+
 
 def main():
     api_key = sys.argv[1]
@@ -116,16 +120,16 @@ def main():
 
         for i, item in enumerate(items):
             if 'mime' in item and item['mime'] != 'text/html':
-                print("Result " + str(i+1) + " is not html snippet, skip")
+                print("Result " + str(i + 1) + " is not html snippet, skip")
                 length -= 1
                 continue
-            
-            print("Result " + str(i+1))
+
+            print("Result " + str(i + 1))
             print("Title: ", item.get('title'))
             print("Link: ", item.get('link'))
             print("Description: ", item.get('snippet'))
             feedback = input("Relevant? (Y/N)")
-            if feedback == "Y":
+            if feedback == "Y" or feedback == "y":
                 item["relevant"] = True
                 count += 1
             else:
@@ -147,9 +151,8 @@ def main():
             query = augment(query, items)
             print("Augmented by " + query)
         else:
-            print("Precision: " + rel)
+            print("Precision: " + str(rel))
             print("Desired precision reached, done")
-
 
 
 if __name__ == '__main__':
