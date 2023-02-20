@@ -50,16 +50,20 @@ def augment(query, items):
     print("R is ")
     for r in R:
         print(r)
-    vectorizer = CountVectorizer()
-    vectorizer.fit(R)
-    r_term_dict = vectorizer.vocabulary_
+    cv = CountVectorizer(stop_words='english')
+    cv_fit = cv.fit_transform(R)
+    word_list = cv.get_feature_names()
+    count_list = cv_fit.toarray().sum(axis=0)
+    r_term_dict = dict(zip(word_list, count_list))
     print("r_term_dict is ")
     print(r_term_dict)
     r_term_count, ir_term_count = 0, 0
     for t, v in r_term_dict.items():
         r_term_count += v
-    vectorizer.fit(IR)
-    ir_term_dict = vectorizer.vocabulary_
+    cv_fit = cv.fit_transform(IR)
+    ir_word_list = cv.get_feature_names()
+    ir_count_list = cv_fit.toarray().sum(axis=0)
+    ir_term_dict = dict(zip(ir_word_list, ir_count_list))
     print("ir_term_dict is ")
     print(ir_term_dict)
     for t, v in ir_term_dict.items():
@@ -68,27 +72,30 @@ def augment(query, items):
 
     # Rocchio's Algorithm + query words ordering
     for term, freq in r_term_dict.items():
-        term_to_value[term] += freq * beta/r_term_count
+        term_to_value[term] += freq * beta / r_term_count
     for term, freq in ir_term_dict.items():
-        term_to_value[term] -= freq * gamma/ir_term_count
+        term_to_value[term] -= freq * gamma / ir_term_count
     sortedTerm = sorted(term_to_value.items(), key=lambda x: x[1], reverse=True)
     print("Sorted Term is ")
     print(sortedTerm)
 
     queries = query.split(' ')
+    n_query = []
+    q_counter = 2
     for i in range(len(sortedTerm)):
         if sortedTerm[i][0] not in queries:
-            queries.append(sortedTerm[i][0])
-            break
+            n_query.append(sortedTerm[i][0])
+            q_counter -= 1
+            if q_counter < 1:
+                break
     term_to_new_value = defaultdict(int)
-    for word in queries:
+    for word in n_query:
         term_to_new_value[word] = term_to_value[word]
 
     sortedTermNew = dict(sorted(term_to_new_value.items(), key=lambda x: x[1], reverse=True))
 
-    requery = ' '.join(list(sortedTermNew.keys()))
+    requery = ' '.join(queries + list(sortedTermNew.keys()))
     print("requery is ", requery)
-
 
     # R_vectors = vectorizer.fit_transform(R).toarray()
     # print("R_vectors aree: ")
@@ -146,6 +153,7 @@ def main():
 
     service = build("customsearch", "v1", developerKey=api_key)
     rel = -1
+    result = []
     while rel < float(precision) and rel != 0:
         resp = service.cse().list(q=query, cx=engine_id).execute()
         items = resp['items']
@@ -200,7 +208,7 @@ def main():
     print("========================")
     if rel >= float(precision):
         print("Final Results are ")
-        for i in length(result):
+        for i in range(len(result)):
             print("Result " + str(i + 1))
             print("Title: ", item.get('title'))
             print("Link: ", item.get('link'))
