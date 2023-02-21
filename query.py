@@ -1,38 +1,20 @@
 import sys
-import pprint
-import random
 from googleapiclient.discovery import build
 from sklearn.feature_extraction.text import CountVectorizer
 from collections import defaultdict
 
-# ToDo: use another stop words dict
-stop_words = ('the', 'a', 'an', 'in', 'of',
-              'to', 'and', 'as', 'at', 'be',
-              'for', 'from', 'is', 'it', 'on',
-              'was', 'were', 'with')
+
+def read_words(filename):
+    f = open(filename, "r")
+    words = f.read().split()
+    f.close()
+    return words
 
 
-# levenshtein edit distance in wikipedia
-def levenshtein(s1, s2):
-    if len(s1) < len(s2):
-        return levenshtein(s2, s1)
-
-    # len(s1) >= len(s2)
-    if len(s2) == 0:
-        return len(s1)
-
-    previous_row = range(len(s2) + 1)
-    for i, c1 in enumerate(s1):
-        current_row = [i + 1]
-        for j, c2 in enumerate(s2):
-            insertions = previous_row[
-                             j + 1] + 1  # j+1 instead of j since previous_row and current_row are one character longer
-            deletions = current_row[j] + 1  # than s2
-            substitutions = previous_row[j] + (c1 != c2)
-            current_row.append(min(insertions, deletions, substitutions))
-        previous_row = current_row
-
-    return previous_row[-1]
+def log_transcript(logs):
+    with open("transcript.txt", "a") as f:
+        f.write(logs + "\n")
+    print(logs)
 
 
 def augment(query, items):
@@ -47,40 +29,38 @@ def augment(query, items):
         else:
             IR.append(doc['title'] + ' ' + doc['snippet'])
 
-    print("R is ")
-    for r in R:
-        print(r)
-    cv = CountVectorizer(stop_words='english')
+    # Get the word list for relevant documents
+    cv = CountVectorizer(stop_words=read_words("stop_words.txt"))
     cv_fit = cv.fit_transform(R)
-    word_list = cv.get_feature_names()
+    word_list = cv.get_feature_names_out()
     count_list = cv_fit.toarray().sum(axis=0)
+    # Generate a dict: word -> frequency in relevant documents
     r_term_dict = dict(zip(word_list, count_list))
-    print("r_term_dict is ")
-    print(r_term_dict)
     r_term_count, ir_term_count = 0, 0
     for t, v in r_term_dict.items():
         r_term_count += v
+
+    # Get the word list for relevant documents
     cv_fit = cv.fit_transform(IR)
-    ir_word_list = cv.get_feature_names()
+    ir_word_list = cv.get_feature_names_out()
     ir_count_list = cv_fit.toarray().sum(axis=0)
+    # Generate a dict: word -> frequency in irrelevant documents
     ir_term_dict = dict(zip(ir_word_list, ir_count_list))
-    print("ir_term_dict is ")
-    print(ir_term_dict)
     for t, v in ir_term_dict.items():
         ir_term_count += v
-    term_to_value = defaultdict(int)
 
     # Rocchio's Algorithm + query words ordering
+    term_to_value = defaultdict(int)
     for term, freq in r_term_dict.items():
         term_to_value[term] += freq * beta / r_term_count
     for term, freq in ir_term_dict.items():
         term_to_value[term] -= freq * gamma / ir_term_count
+    # Sort the words by the value calculated by Rocchio's Algorithm
     sortedTerm = sorted(term_to_value.items(), key=lambda x: x[1], reverse=True)
-    print("Sorted Term is ")
-    print(sortedTerm)
 
     queries = query.split(' ')
     n_query = []
+    # Pick up two new words
     q_counter = 2
     for i in range(len(sortedTerm)):
         if sortedTerm[i][0] not in queries:
@@ -92,56 +72,13 @@ def augment(query, items):
     for word in n_query:
         term_to_new_value[word] = term_to_value[word]
 
+    # Order new words
     sortedTermNew = dict(sorted(term_to_new_value.items(), key=lambda x: x[1], reverse=True))
 
+    # Generate new query
     requery = ' '.join(queries + list(sortedTermNew.keys()))
     print("requery is ", requery)
 
-    # R_vectors = vectorizer.fit_transform(R).toarray()
-    # print("R_vectors aree: ")
-    # print(R_vectors)
-    # R_terms = vectorizer.get_feature_names()
-    # print(R_terms)
-    # R_freq = {}
-    #
-    # IR_vectors = vectorizer.fit_transform(IR).toarray()
-    # IR_terms = vectorizer.get_feature_names()
-    #
-    # for i, vector in enumerate(R_vectors):
-    #     # get vector for each relevant search result
-    #     print("Relevant document vector", i)
-    #     for j, freq in enumerate(vector):
-    #         term = R_terms[j]
-    #         skip = False
-    #
-    #         # check stop words
-    #         if term in stop_words:
-    #             continue
-    #
-    #         # check edit distance
-    #         for q in queries:
-    #             if levenshtein(term, q) <= 1:
-    #                 skip = True
-    #                 break
-    #         if skip:
-    #             continue
-    #
-    #         # check frequencies
-    #         if freq == 0:
-    #             continue
-    #
-    #         # modified rocchio's algorithm
-    #         if term in IR_terms and p2 < gamma:
-    #             continue
-    #
-    #         print(term, ":", freq)
-    #         if term in R_freq:
-    #             R_freq[term] += freq
-    #         else:
-    #             R_freq[term] = 1
-    #
-    # print(R_freq)
-    # TODO construct new query
     return requery
 
 
@@ -153,66 +90,56 @@ def main():
 
     service = build("customsearch", "v1", developerKey=api_key)
     rel = -1
-    result = []
     while rel < float(precision) and rel != 0:
-        resp = service.cse().list(q=query, cx=engine_id).execute()
+        resp = service.cse().list(q=query, cx=engine_id, fileType="html").execute()
         items = resp['items']
         count, length = 0, 10
 
-        print("Parameters: ", api_key, engine_id, precision)
-        print("API key      = " + api_key)
-        print("Engine Key   = " + engine_id)
-        print("Precision    = " + precision)
-        print("Query        = " + query)
-        print("Google Search Results:")
-        print("========================")
-        result = []
+        log_transcript("Parameters: ")
+        log_transcript("API key      = " + api_key)
+        log_transcript("Engine Key   = " + engine_id)
+        log_transcript("Precision    = " + precision)
+        log_transcript("Query        = " + query)
+        log_transcript("Google Search Results:")
+        log_transcript("========================")
         for i, item in enumerate(items):
             if 'mime' in item and item['mime'] != 'text/html':
-                print("Result " + str(i + 1) + " is not html snippet, skip")
+                log_transcript("Result " + str(i + 1) + " is not html snippet, skip")
                 length -= 1
                 continue
 
-            print("Result " + str(i + 1))
-            print("Title: ", item.get('title'))
-            print("Link: ", item.get('link'))
-            print("Description: ", item.get('snippet'))
+            log_transcript("Result " + str(i + 1))
+            log_transcript("Title: " + item.get('title'))
+            log_transcript("Link: " + item.get('link'))
+            log_transcript("Description: " + item.get('snippet'))
             feedback = input("Relevant? (Y/N)")
             if feedback == "Y" or feedback == "y":
                 item["relevant"] = True
-                result.append(item)
                 count += 1
             else:
                 item["relevant"] = False
 
-        print("========================")
-        print("FEEDBACK SUMMARY")
-        print("Query: " + query)
+        log_transcript("========================")
+        log_transcript("FEEDBACK SUMMARY")
+        log_transcript("Query: " + query)
         if length == 0:
-            print("No valid html results!")
+            log_transcript("No valid html results!")
             break
 
         rel = count / length
         if rel == 0:
-            print("Precision: 0")
-            print("Stopped")
+            log_transcript("Precision: 0")
+            log_transcript("Stopped")
             break
         elif rel < float(precision):
-            print("Precision: " + str(rel) + " < " + str(precision))
+            log_transcript("Precision: " + str(rel) + " < " + str(precision))
             query = augment(query, items)
-            print("Augmented by " + query)
+            log_transcript("Augmented by " + query)
         else:
-            print("Precision: " + str(rel))
-            print("Desired precision reached, done")
+            log_transcript("Precision: " + str(rel))
+            log_transcript("Desired precision reached, done")
             break
-    print("========================")
-    if rel >= float(precision):
-        print("Final Results are ")
-        for i in range(len(result)):
-            print("Result " + str(i + 1))
-            print("Title: ", item.get('title'))
-            print("Link: ", item.get('link'))
-            print("Description: ", item.get('snippet'))
+    log_transcript("========================")
 
 
 if __name__ == '__main__':

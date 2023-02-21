@@ -1,0 +1,315 @@
+Parameters: 
+API key      = AIzaSyCMb6xd4NnbwRHgXUPVA5dTfFxaAN3CuLE
+Engine Key   = a95a1235f40abcb47
+Precision    = 0.9
+Query        = per se
+Google Search Results:
+========================
+Result 1
+Title: At Thomas Keller's Per Se, Slips and Stumbles - The New York Times
+Link: https://www.nytimes.com/2016/01/13/dining/pete-wells-per-se-review.html
+Description: Jan 12, 2016 ... Dinner or lunch at this grand, hermetic, self-regarding, ungenerous restaurant brings a protracted march of many dishes. In 2004, the year Per ...
+Result 2
+Title: Per Se DUI Laws - FindLaw
+Link: https://www.findlaw.com/dui/laws-resources/per-se-dui-laws.html
+Description: Oct 25, 2018 ... Per se laws in DUI or DWI cases generally establish that once an individual is shown to have a blood-alcohol concentration (BAC) at or above ...
+Result 3
+Title: Per Se — NYC — Restaurant Review - The New York Times
+Link: https://www.nytimes.com/2011/10/12/dining/reviews/per-se-nyc-restaurant-review.html
+Description: Oct 11, 2011 ... Per Se, in the Time Warner Center, is the best restaurant in New York City.
+Result 4
+Title: What Is a “Per Se” DUI? | Nolo
+Link: https://www.nolo.com/legal-encyclopedia/what-is-a-per-se-dui.html
+Description: A "per se" DUI (driving under the influence) charge is based on a driver having a certain amount of drugs or alcohol in his or her blood.
+Result 5
+Title: DUI Per Se Explained | DuiDrivingLaws.org
+Link: https://dui.drivinglaws.org/resources/dui-per-se-explained.html
+Description: A drunk or drugged driving charge based on blood alcohol concentration (BAC) or the quantity of drugs in your system is known as a "per se" DUI.
+Result 6
+Title: PER SE, New York City - Hell's Kitchen - Menu, Prices & Restaurant ...
+Link: https://www.tripadvisor.com/Restaurant_Review-g60763-d425628-Reviews-Per_Se-New_York_City_New_York.html
+Description: Per Se, New York City: See 1857 unbiased reviews of Per Se, rated 4.5 of 5 on Tripadvisor and ranked #64 of 10035 restaurants in New York City.
+Result 7
+Title: Defamation Per Se | Chicago Commercial Litigation Lawyers Lubin ...
+Link: https://www.thebusinesslitigators.com/defamation-per-se.html
+Description: Statements that are defamatory per se (sometimes referred to generically by courts as libel per se) are so obviously and naturally harmful to a person's or ...
+Result 8
+Title: Negligence Per Se | San Jose Personal Injury Lawyers Corsiglia ...
+Link: https://www.cmalaw.net/negligence-per-se.html
+Description: In California, negligence per se is a legal doctrine that states that when a person violates a particular provision of a statute, that action is presumed to be ...
+Result 9
+Title: Per Se's Terrible Health Grade Says More About the DOH Than It ...
+Link: https://www.grubstreet.com/2014/03/per-se-health-department-inspection.html
+Description: Mar 7, 2014 ... This week, word spread that Per Se, Thomas Keller's ultra-high-end restaurant, received an excruciating 42 points during its most recent ...
+Result 10
+Title: How Does Vagueness Affect Negligence Per Se Claims? | Drug ...
+Link: https://www.druganddevicelawblog.com/2019/07/how-does-vagueness-affect-negligence-per-se-claims.html
+Description: Jul 8, 2019 ... Because negligence per se seems to be flowing rather than ebbing in prescription medical product liability litigation these days, we thought we' ...
+========================
+FEEDBACK SUMMARY
+Query: per se
+Precision: 0.4 < 0.9
+Augmented by per se york restaurant
+Parameters: 
+API key      = AIzaSyCMb6xd4NnbwRHgXUPVA5dTfFxaAN3CuLE
+Engine Key   = a95a1235f40abcb47
+Precision    = 0.9
+Query        = per se york restaurant
+Google Search Results:
+========================
+Result 1
+Title: PER SE, New York City - Hell's Kitchen - Menu, Prices & Restaurant ...
+Link: https://www.tripadvisor.com/Restaurant_Review-g60763-d425628-Reviews-Per_Se-New_York_City_New_York.html
+Description: Per Se, New York City: See 1857 unbiased reviews of Per Se, rated 4.5 of 5 on Tripadvisor and ranked #64 of 10035 restaurants in New York City.
+Result 2
+Title: At Thomas Keller's Per Se, Slips and Stumbles - The New York Times
+Link: https://www.nytimes.com/2016/01/13/dining/pete-wells-per-se-review.html
+Description: Jan 12, 2016 ... Dinner or lunch at this grand, hermetic, self-regarding, ungenerous restaurant brings a protracted march of many dishes. In 2004, the year Per ...
+Result 3
+Title: Per Se health code violations overturned by judge -- at least most of ...
+Link: https://www.latimes.com/food/dailydish/la-dd-per-se-health-code-violations-overturned-by-judge-20140404-story.html
+Description: Apr 4, 2014 ... When Per Se, Thomas Keller's three-Michelin-star restaurant in New York, was hit with health code violations last month that threatened its ...
+Result 4
+Title: Per Se — NYC — Restaurant Review - The New York Times
+Link: https://www.nytimes.com/2011/10/12/dining/reviews/per-se-nyc-restaurant-review.html
+Description: Oct 11, 2011 ... Per Se, in the Time Warner Center, is the best restaurant in New York City.
+Result 5
+Title: Per Se - New York - Restaurant - 50Best Discovery
+Link: https://www.theworlds50best.com/discovery/Establishments/US/New-York/Per-Se.html
+Description: As at older California cousin The French Laundry, Keller has created the archetypal example of New American fine dining. Key Information. Tasting menu from $225 ...
+Result 6
+Title: The Magic of Napa With Urban Polish - The New York Times
+Link: https://www.nytimes.com/2004/09/08/dining/the-magic-of-napa-with-urban-polish.html
+Description: Sep 8, 2004 ... Frank Bruni reviews Per Se, Thomas Keller's restaurant at Time Warner Center; photos (L)
+Result 7
+Title: New York's Per Se receives C sanitation rating from health ...
+Link: https://www.dailymail.co.uk/news/article-2573192/Up-code-Not-Per-Se-New-Yorks-best-restaurant-receives-embarrassing-C-sanitation-rating-health-inspectors.html
+Description: Mar 4, 2014 ... Its $310 tasting menu makes Per Se one of New York City's most expensive restaurants, but its C grade from health inspectors puts it near the ...
+Result 8
+Title: Per Se's Terrible Health Grade Says More About the DOH Than It ...
+Link: https://www.grubstreet.com/2014/03/per-se-health-department-inspection.html
+Description: Mar 7, 2014 ... Thomas Keller, working the sauce station at Per Se. ... Let's start with the obvious: Per Se is not a “dirty” restaurant. The culture in any ...
+Result 9
+Title: Per Se: New York's 'best restaurant' trashed in New York Times ...
+Link: https://www.independent.co.uk/news/world/americas/new-york-s-best-restaurant-trashed-in-new-york-times-review-a6810426.html
+Description: Jan 13, 2016 ... Ever since it opened its doors in 2004, the Per Se restaurant, owned and operated by chef and innovator Thomas Keller has been wowing people ...
+Result 10
+Title: Two of NYC's Most Acclaimed Restaurants Just Lost Their Michelin ...
+Link: https://finance.yahoo.com/news/two-nyc-most-acclaimed-restaurants-173000456.html
+Description: Oct 7, 2022 ... Among the restaurants missing from New York's 2022 Michelin Guide are the ... Chef's Table at Brooklyn Fare, Le Bernardin, Masa and Per Se.
+========================
+FEEDBACK SUMMARY
+Query: per se york restaurant
+Precision: 1.0
+Desired precision reached, done
+========================
+Parameters: 
+API key      = AIzaSyCMb6xd4NnbwRHgXUPVA5dTfFxaAN3CuLE
+Engine Key   = a95a1235f40abcb47
+Precision    = 0.9
+Query        = brin
+Google Search Results:
+========================
+Result 1
+Title: Documentation: 15: 71.1. Introduction - PostgreSQL
+Link: https://www.postgresql.org/docs/current/brin-intro.html
+Description: BRIN stands for Block Range Index. BRIN is designed for handling very large tables in which certain columns have some natural correlation with their ...
+Result 2
+Title: Google Calls In Larry Page and Sergey Brin to Tackle ChatGPT and ...
+Link: https://www.nytimes.com/2023/01/20/technology/google-chatgpt-artificial-intelligence.html
+Description: Jan 20, 2023 ... A rival chatbot has shaken Google out of its routine, with the founders who left three years ago re-engaging and more than 20 A.I. projects ...
+Result 3
+Title: Documentation: 15: Chapter 71. BRIN Indexes - PostgreSQL
+Link: https://www.postgresql.org/docs/current/brin.html
+Description: BRIN Indexes. Prev · Up, Part VII. Internals, Home · Next. Chapter 71. BRIN Indexes. Table of Contents. 71.1. Introduction · 71.1.1. Index Maintenance.
+Result 4
+Title: Department of Mathematics - Brin Postdoctoral Program
+Link: https://www-math.umd.edu/about-us/brin-postdoctoral-program.html
+Description: Professor Brin is an emeritus professor of mathematics at the University of Maryland. The Brin Postdoctoral program supports mathematicians who have recently ...
+Result 5
+Title: Mitchell Brin, M.D. - Our R&D Leaders - Our Science | AbbVie
+Link: https://www.abbvie.com/our-science/our-rd-leaders/mitchell-brin.html
+Description: Mitchell Brin serves as Senior Vice President, R&D and Chief Scientific Officer, BOTOX® and Neurotoxins at AbbVie. In this role, he provides cross-functional ...
+Result 6
+Title: Sergey Brin Fast Facts | CNN
+Link: https://www.cnn.com/2014/07/03/us/sergey-brin-fast-facts/index.html
+Description: Jul 3, 2014 ... Here's a look at the life of Google co-founder Sergey Brin. Personal: Birth date: August 21, 1973. Birth place: Moscow, Soviet Union (now ...
+Result 7
+Title: Sergey Brin – Google Research
+Link: https://research.google.com/pubs/SergeyBrin.html
+Description: Sergey Brin, a native of Moscow, received a bachelor of science degree with honors in mathematics and computer science from the University of Maryland at ...
+Result 8
+Title: Davis Brin College Stats, School, Draft, Gamelog, Splits | College ...
+Link: https://www.sports-reference.com/cfb/players/davis-brin-1.html
+Description: Check out Davis Brin's College Stats, School, Draft, Gamelog, Splits and More College Stats at Sports-Reference.com.
+Result 9
+Title: DAVID BRIN books
+Link: https://www.davidbrin.com/books.html
+Description: DAVID BRIN's best-selling, Hugo- and Nebula-winning science fiction and nonfiction novels and books.
+Result 10
+Title: Brin Strouse – Track and Field Results & Statistics - TFRRS
+Link: https://www.tfrrs.org/athletes/7392333/Colorado_School_Mines/Brin_Strouse.html
+Description: 8th Annual Indoor Gorilla Classic Feb 10-11, 2023. Mile, 5:16.40, 32nd (F). 5000, 17:24.96, 6th (F). Mines Winter Classic & Multi Feb 3- 4, 2023 ...
+========================
+FEEDBACK SUMMARY
+Query: brin
+Precision: 0.3 < 0.9
+Augmented by brin sergey google
+Parameters: 
+API key      = AIzaSyCMb6xd4NnbwRHgXUPVA5dTfFxaAN3CuLE
+Engine Key   = a95a1235f40abcb47
+Precision    = 0.9
+Query        = brin sergey google
+Google Search Results:
+========================
+Result 1
+Title: Google Calls In Larry Page and Sergey Brin to Tackle ChatGPT and ...
+Link: https://www.nytimes.com/2023/01/20/technology/google-chatgpt-artificial-intelligence.html
+Description: Jan 20, 2023 ... Last month, Larry Page and Sergey Brin, Google's founders, held several meetings with company executives. The topic: a rival's new chatbot, ...
+Result 2
+Title: Sergey Brin – Google Research
+Link: https://research.google.com/pubs/SergeyBrin.html
+Description: Sergey Brin, a native of Moscow, received a bachelor of science degree with honors in mathematics and computer science from the University of Maryland at ...
+Result 3
+Title: Self-driving cars a reality for 'ordinary people' within 5 years, says ...
+Link: https://www.computerworld.com/article/2491635/self-driving-cars-a-reality-for--ordinary-people--within-5-years--says-google-s-sergey-b.html
+Description: Sep 25, 2012 ... Such "autonomous vehicles" will be a reality for "ordinary people" in less than five years, Google co-founder Sergey Brin said.
+Result 4
+Title: The Saudi Crown Prince hung out this week with Google execs ...
+Link: https://www.cnbc.com/2018/04/07/heres-a-look-at-who.html
+Description: Apr 7, 2018 ... The Saudi Crown Prince came to Silicon Valley this week and met with a handful of executives, including co-founder Sergey Brin.
+Result 5
+Title: Google Glass Will Make You Manly, Says Sergey Brin | WIRED
+Link: https://packetstormsecurity.com/news/view/22180/Google-Glass-Will-Make-You-Manly-Says-Sergey-Brin.html
+Description: Feb 27, 2013 ... Google co-foudner Sergey Brin said smartphones are "socially isolating" and "emasculating" during a talk at the TED conference Wednesday.
+Result 6
+Title: Google co-founders and Silicon Valley billionaires try to live forever
+Link: https://www.cnbc.com/2017/03/31/google-co-founders-and-silicon-valley-billionaires-try-to-live-forever.html
+Description: Mar 31, 2017 ... One example is Google co-founder Sergey Brin, who emigrated from the former Soviet Union. Getty Images. One hundred and fifty thousand ...
+Result 7
+Title: Google co-founder Sergey Brin among hundreds protesting Trump ...
+Link: https://www.latimes.com/local/lanow/la-me-trump-protest-sfo-20170129-story.html
+Description: Jan 29, 2017 ... Google co-founder Sergey Brin was among hundreds of protesters who converged on San Francisco International Airport on Saturday to speak out ...
+Result 8
+Title: Google founders Page, Brin, have sold $1 billion in stock since May
+Link: https://www.cnbc.com/2021/07/30/google-founders-page-brin-have-sold-1-billion-in-stock-since-may.html
+Description: Jul 30, 2021 ... Larry Page and Sergey Brin last sold shares in 2017, when their last plan expired. Since then, the stock price has nearly tripled.
+Result 9
+Title: Elon Musk was said to have dropped to one knee and begged for ...
+Link: https://finance.yahoo.com/news/elon-musk-reportedly-dropped-knees-171651785.html
+Description: Jul 24, 2022 ... Sources told The Wall Street Journal that Brin acknowledged the apology but ... for an affair with Google cofounder Sergey Brin's wife.
+Result 10
+Title: Emails reveal that Steve Jobs angrily called Sergey Brin over ...
+Link: https://www.engadget.com/2014-03-24-emails-reveal-that-steve-jobs-angrily-called-sergey-brin-over-go.html
+Description: Mar 24, 2014 ... In truth, court documents show that Google was primarily interested in a star engineer on Apple's Safari team. A few days later, Brin sent the ...
+========================
+FEEDBACK SUMMARY
+Query: brin sergey google
+Precision: 1.0
+Desired precision reached, done
+========================
+Parameters: 
+API key      = AIzaSyCMb6xd4NnbwRHgXUPVA5dTfFxaAN3CuLE
+Engine Key   = a95a1235f40abcb47
+Precision    = 0.9
+Query        = cases
+Google Search Results:
+========================
+Result 1
+Title: COVID - Coronavirus Statistics - Worldometer
+Link: https://www.bilgit.com/linkler/sorgulamalar/corona.html
+Description: Daily and weekly updated statistics tracking the number of COVID-19 cases, recovered, and deaths. Historical data with cumulative charts, graphs, ...
+Result 2
+Title: 2022 U.S. Map & Case Count | Mpox | Poxvirus | CDC
+Link: https://www.cdc.gov/poxvirus/monkeypox/response/2022/us-map.html
+Description: View a map of 2022 mpox cases in the United States.
+Result 3
+Title: Case Status and Information
+Link: https://www.vacourts.gov/caseinfo/home.html
+Description: Circuit Court. Circuit Court Case Information Online access to civil and criminal cases in select circuit courts. Cases may be searched by locality using name, ...
+Result 4
+Title: Measles Cases and Outbreaks | CDC
+Link: https://www.cdc.gov/measles/cases-outbreaks.html
+Description: Measles cases in 2019. From January 1 to December 31, 2019, 1,274* individual cases of measles were confirmed in 31 states. This is the greatest number ...
+Result 5
+Title: Covid in the U.S.: Latest Maps, Case and Death Counts - The New ...
+Link: https://www.nytimes.com/interactive/2021/us/covid-cases.html
+Description: Track Covid-19 in your area, and get the latest state and county data on cases, deaths, hospitalizations, tests and vaccinations.
+Result 6
+Title: COVID-19 Map - Johns Hopkins Coronavirus Resource Center
+Link: https://coronavirus.jhu.edu/map.html
+Description: Coronavirus COVID-19 Global Cases by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU)
+Result 7
+Title: Two Supreme Court cases this week could upend the entire internet ...
+Link: https://www.cnn.com/2023/02/20/tech/supreme-court-tech-platforms/index.html
+Description: 4 hours ago ... The Supreme Court is set to hear back-to-back oral arguments this week in two cases that could significantly reshape online speech and ...
+Result 8
+Title: Case Status Online - Case Status Search
+Link: https://iss.vt.edu/ForeignNational/H-1B/USCIS-Case-Status.html
+Description: Case Status Online. Use this tool to track the status of an immigration application, petition, or request. Enter a Receipt Number. DHS Privacy Notice ...
+Result 9
+Title: Cases—Wolfram Language Documentation
+Link: https://reference.wolfram.com/language/ref/Cases.html
+Description: Cases[expr, pattern, levelspec] gives a list of all parts of expr on levels specified by levelspec that match the pattern. Cases[expr, pattern -> rhs, ...
+Result 10
+Title: Coronavirus.Maryland.gov.
+Link: https://montgomerycountymd.gov/covid19/data/md-dashboard.html
+Description: Data for ZIP codes with 7 or fewer cases are suppressed. Hospitalization data reflect COVID-19 bed occupancy in Maryland hospitals. Testing volume data ...
+========================
+FEEDBACK SUMMARY
+Query: cases
+Precision: 0.4 < 0.9
+Augmented by cases covid 19
+Parameters: 
+API key      = AIzaSyCMb6xd4NnbwRHgXUPVA5dTfFxaAN3CuLE
+Engine Key   = a95a1235f40abcb47
+Precision    = 0.9
+Query        = cases covid 19
+Google Search Results:
+========================
+Result 1
+Title: COVID - Coronavirus Statistics - Worldometer
+Link: https://www.bilgit.com/linkler/sorgulamalar/corona.html
+Description: Daily and weekly updated statistics tracking the number of COVID-19 cases, recovered, and deaths. Historical data with cumulative charts, graphs, ...
+Result 2
+Title: COVID-19 Map - Johns Hopkins Coronavirus Resource Center
+Link: https://coronavirus.jhu.edu/map.html
+Description: Coronavirus COVID-19 Global Cases by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU)
+Result 3
+Title: COVID Data Tracker Weekly Review | CDC
+Link: https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html
+Description: Since the beginning of the COVID-19 pandemic almost three years ago, we have known ... Weekly Trends in COVID-19 Cases in the United States Reported to CDC.
+Result 4
+Title: Coronavirus COVID-19 - Mississippi State Department of Health
+Link: http://www.msdh.state.ms.us/msdhsite/_static/14,0,420.html
+Description: New Cases. 3,594. New COVID-19 positive test results reported to MSDH for this time period. Total Mississippi Cases. 984,614. New Deaths.
+Result 5
+Title: Coronavirus Disease 2019 (COVID-19) | CDC
+Link: https://www.cdc.gov/coronavirus/2019-ncov/index.html
+Description: Find links to guidance and information on all topics related to COVID-19, including the ... Stay up to date with your COVID-19 vaccines. ... Cases in US.
+Result 6
+Title: Covid in the U.S.: Latest Maps, Case and Death Counts - The New ...
+Link: https://www.nytimes.com/interactive/2021/us/covid-cases.html
+Description: Track Covid-19 in your area, and get the latest state and county data on cases, deaths, hospitalizations, tests and vaccinations.
+Result 7
+Title: Novel Coronavirus
+Link: https://www.tn.gov/health/cedep/ncov.html
+Description: Coronavirus Disease (COVID-19) · Cases · Deaths · Hospitalizations* · Tests · Weekly Summary: 02/05/23 - 02/11/23.
+Result 8
+Title: Coronavirus.Maryland.gov.
+Link: https://montgomerycountymd.gov/covid19/data/md-dashboard.html
+Description: Data for ZIP codes with 7 or fewer cases are suppressed. Hospitalization data reflect COVID-19 bed occupancy in Maryland hospitals.
+Result 9
+Title: Coronavirus Disease 2019 (COVID-19)
+Link: https://dph.illinois.gov/covid19.html
+Description: Vaccines Administered · Total Cases · Confirmed Deaths · Variant Cases · Probable Deaths · COVID-19 Resources · COVID-19 Community Levels Map · Weekly Cases Change ...
+Result 10
+Title: Situation Update for COVID-19 - MN Dept. of Health
+Link: https://www.health.state.mn.us/diseases/coronavirus/stats/index.html
+Description: Tracking vaccine breakthrough cases in Minnesota and monitoring trends. Setting Specific Data. COVID-19 data reported by Minnesota child care, pre-K through ...
+========================
+FEEDBACK SUMMARY
+Query: cases covid 19
+Precision: 1.0
+Desired precision reached, done
+========================
